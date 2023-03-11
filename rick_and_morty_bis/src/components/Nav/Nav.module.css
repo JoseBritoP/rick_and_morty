@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #042A2B;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.2rem;
+  padding: 16px;
+  color: #fff;
+}
+
+nav h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+nav form {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+nav input[type="text"] {
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  margin-left: 8px;
+  padding: 8px;
+}
+
+nav input[type="text"]:focus {
+  outline: none;
+  background-color: #fff;
+}

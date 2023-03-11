@@ -14,12 +14,23 @@
   font-weight: 700;
   margin-bottom: 8px;
 }
-
+.card__container{
+  display: flex;
+  justify-content: space-evenly;
+}
 .card__subtitle {
   font-size: 1rem;
   font-weight: 400;
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.card__button{
+  background-color:#FFF;
+  border: 2px solid #FE5F55;
+  color:#FE5F55;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 .card__body {
@@ -37,4 +48,8 @@
   Rojin claro: #FE5F55
   Verde mate: #C8E087
   Dark green: #042A2B
+  Dark green god: #214F4B
+  Bordo: #902D41
+  Light blue: #9AC2C5
+  Persian green: #549F93
 */
