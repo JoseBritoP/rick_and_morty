@@ -11,7 +11,7 @@
 // }
 
 import React from 'react'
-
+import styles from './Card.module.css'
 export default class Card extends React.Component {
   //  constructor(props){
   //     super(props)
@@ -19,13 +19,13 @@ export default class Card extends React.Component {
 
   render() {
     return (
-      <div>
-         <button onClick={this.props.onClose}>X</button>
-         <h2>{this.props.name}</h2>
-         <img  src={this.props.image} alt={`Carta de ${this.props.name}`} />
-         <h2>{this.props.species}</h2>
-         <h2>{this.props.gender}</h2>
-      </div>
+      <div className={styles.card}>
+      <button onClick={this.props.onClose}>X</button>
+      <h2 className={styles.card__title}>{this.props.name}</h2>
+      <img src={this.props.image} alt={`Carta de ${this.props.name}`} className={styles.card__image} />
+      <h2 className={styles.card__subtitle}>Especie: {this.props.species}</h2>
+      <h2 className={styles.card__subtitle}>Género: {this.props.gender}</h2>
+    </div>
     )
   }
 }

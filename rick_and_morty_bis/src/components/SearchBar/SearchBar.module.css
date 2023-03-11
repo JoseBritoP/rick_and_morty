@@ -1,0 +1,24 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #042A2B;
+  padding:2rem;
+}
+
+.searchInput {
+  width: 200px;
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.searchButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
