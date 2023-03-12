@@ -1,6 +1,5 @@
 .nav {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: #042A2B;
@@ -13,6 +12,10 @@
 nav h1 {
   font-size: 2rem;
   margin: 0;
+}
+
+.routes{
+  background-color: #378f92;
 }
 
 nav form {

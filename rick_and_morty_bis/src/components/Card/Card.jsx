@@ -12,6 +12,7 @@
 
 import React from 'react'
 import styles from './Card.module.css'
+import { Link } from 'react-router-dom';
 export default class Card extends React.Component {
   //  constructor(props){
       // super(props)
@@ -23,7 +24,9 @@ export default class Card extends React.Component {
     return (
       <div className={styles.card}>
       <button className={styles.card__button} onClick={()=>onClose(id)}>X</button>
-      <h2 className={styles.card__title}>{name}</h2>
+      <Link to={`/detail/${id}`} >
+        <h2 className={styles.card__title}>{name}</h2>
+      </Link>
       <img src={image} alt={`Carta de ${name}`} className={styles.card__image} />
       <div className={styles.card__container}>
         <h2 className={styles.card__subtitle}>Especie: {species}</h2>

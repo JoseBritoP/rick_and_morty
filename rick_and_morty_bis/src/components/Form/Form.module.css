@@ -1,0 +1,10 @@
+.container{
+  margin: 20;
+}
+
+.input{
+  border: 1;
+  border-color: '#ccc';
+  padding: 10;
+  margin-bottom: 10;
+}
