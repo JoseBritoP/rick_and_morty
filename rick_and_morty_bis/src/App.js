@@ -1,18 +1,27 @@
 import { useState } from 'react'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useLocation} from 'react-router-dom'
+import Nav from './components/Nav/Nav'
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Cards from './components/Cards/Cards.jsx'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Error from './components/Error/Error'
+import Form from './components/Form/Form'
 import './App.css'
 // import Card from './components/Card/Card.jsx'
-import Cards from './components/Cards/Cards.jsx'
-import Nav from './components/Nav/Nav'
 
 function App () {
 
   // State/Personaje a mostrar
   const [characters,setCharacters] = useState([]);
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
 
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
 
   //Funciones 
   const onSearch = (id) =>{
@@ -40,13 +49,30 @@ function App () {
   const onClose = (id) =>{
     setCharacters(characters.filter((char)=> char.id !==id))
   }
+
+  const {pathname} = useLocation();
+
+  const login = (userData) => {
+    if (userData.username === username && userData.password === password) {
+      setAccess(true);
+      navigate("/home");
+    } else {
+      alert("Credenciales incorrectas");
+    }
+  };
+
+  const username = "josbrito@mail.com";
+  const password = "pass21";
+
   return (
     <div className='App' style={{ padding: '25px' }}>
-        <Nav onSearch={onSearch}/>
+        {/* Es para que el nav se muestre en los demás path exceptuando el del Form */}
+        {pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route path='/home' element={ <Cards characters={characters} onClose={onClose}/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/detail/:detailId' element={<Detail/>}/>
+        <Route path="/" element={<Form login={login} />} />
         <Route path='/*' element ={<Error/>}/>
       </Routes>
     </div>
@@ -54,11 +80,3 @@ function App () {
 }
 
 export default App
-
-
-/*
-
-"/home": esta será la ruta del Home (vista principal/general).
-"/detail/:detailId": en esta ruta encontraremos información más detallada sobre el personaje en particular.
-"/about": en esta ruta colocarás tu nombre y describirás de qué trata la aplicación Rick & Morty.
-*/
