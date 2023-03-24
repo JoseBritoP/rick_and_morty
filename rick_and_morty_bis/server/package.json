@@ -1,0 +1,26 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "webserver",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseBritoP/rick_and_morty.git"
+  },
+  "author": "José Brito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseBritoP/rick_and_morty/issues"
+  },
+  "homepage": "https://github.com/JoseBritoP/rick_and_morty#readme",
+  "dependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
