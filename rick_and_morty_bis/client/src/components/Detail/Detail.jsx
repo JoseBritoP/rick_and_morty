@@ -13,9 +13,10 @@ const Detail = () => {
 
   // Quiero que cuando este componente se monte, mostrar los datos del personaje de id x
   useEffect(()=>{
-    const URL_BASE = 'https://be-a-rym.up.railway.app/api'
-    const KEY = '25646530d133.e16d02b2bb0d7f53a40c'
-    axios(`${URL_BASE}/character/${detailId}?key=${KEY}`)
+    // const URL_BASE = 'https://be-a-rym.up.railway.app/api'
+    const URL_BASE = 'http://localhost:3001/rickandmorty'
+    // const KEY = '25646530d133.e16d02b2bb0d7f53a40c'
+    axios(`${URL_BASE}/detail/${detailId}`)
     .then((response)=> setCharacter(response.data));
     // Axios ya convierte la respuesta a .json
     // Nos ahorra .then((response) => response.json())

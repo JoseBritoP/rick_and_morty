@@ -24,14 +24,14 @@ function App () {
     !access && navigate("/");
   }, [access]);
 
-  //Funciones 
+  // Funciones 
   const onSearch = (id) =>{
     const URL_BASE = 'http://localhost:3001/rickandmorty'
     // const URL_BASE = 'https://be-a-rym.up.railway.app/api'
     // const KEY = '25646530d133.e16d02b2bb0d7f53a40c'
     // const urlCharacterId = `${URL_BASE}/character/${id}?key=${KEY}`;
 
-    const url =  `${URL_BASE}/character/${id}`
+    const url =  `${URL_BASE}/onsearch/${id}`
     if(characters.find((char)=>char.id === id)) return alert('Personaje repetido');
     
     fetch(url)

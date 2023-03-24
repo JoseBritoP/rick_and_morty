@@ -1,9 +1,9 @@
 const http = require('http')
 const getCharById = require('./controllers/getCharById');
 const getCharDetail = require('./controllers/getCharDetail');
-
+//
 http
-.createServer((req,res)=>{
+ .createServer((req,res)=>{
   res.setHeader("Access-Control-Allow-Origin", "*")
   const {url} = req
 
