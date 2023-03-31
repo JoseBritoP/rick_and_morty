@@ -22,11 +22,11 @@ function App () {
 
   useEffect(() => {
     !access && navigate("/");
-  }, [access]);
+  }, [access,navigate]);
 
   // Funciones 
   const onSearch = (id) =>{
-    const URL_BASE = 'http://localhost:3001/rickandmorty'
+    const URL_BASE = 'http://localhost:3001/'
     // const URL_BASE = 'https://be-a-rym.up.railway.app/api'
     // const KEY = '25646530d133.e16d02b2bb0d7f53a40c'
     // const urlCharacterId = `${URL_BASE}/character/${id}?key=${KEY}`;
